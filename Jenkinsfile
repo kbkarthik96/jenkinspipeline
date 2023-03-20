@@ -19,21 +19,12 @@ pipeline {
          }
          }
       stage ('TEST') {
-         parallel {
-            stage ('TEST1') {
-               steps {
-               echo "this is test1"
-               }
-            }
-            stage ('TEST2') {
-            steps {
-            echo "this is test2"
-            }
-               } 
-            
-            
-           } 
-         
+         steps {
+          sh '''
+          sleep 5
+          echo "this is test stage"
+          '''
+         }
         }
    }
 }
